@@ -1,0 +1,7 @@
+### The --skip-tests flag for ng new didn't quite match my expectations as a developer
+* ng new my-project --skip-tests
+
+### you can add --skipTests=true|false if true it wont generate any spec.ts
+* example : ng g component componentName --skipTests=true
+this line wont generate any spec.ts files
+

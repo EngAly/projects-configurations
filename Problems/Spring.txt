@@ -1,0 +1,11 @@
+### Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured
+* The problem: Spring boot doesn't have the all the info needed to configure the JPA data source i.e. the JDBC connection properties.  
+Solutions:   
+provide the JDBC connection properties (best)
+postpone supplying connection properties by excluding some AutoConfig classes (temporary - should be removed eventually)
+The above link excludes the DataSourceAutoConfiguration.class with
+
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+But this didn't work for me. I instead, had to exclude 2 AutoConfig classes:
+
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, XADataSourceAut
